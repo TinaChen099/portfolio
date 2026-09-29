@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intellink — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="../index.html">Studio</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="project-page">
+    <a class="back-link" href="../index.html">Back to work</a>
+
+    <header class="project-header">
+      <div class="project-header-content">
+        <p class="project-category">Intellink · Case Study</p>
+        <h1 class="project-title">
+          Redesigning an AI Procurement
+          <strong>Landing Page</strong>
+          to <strong>Improve Conversion</strong>
+          and Clarify Product Positioning
+        </h1>
+        <div class="conversion-stat">
+          <span class="conversion-stat-arrow" aria-hidden="true">↑</span>
+          <strong class="conversion-stat-value">5.5%</strong>
+          <span class="conversion-stat-label">Increase in Conversion Rate</span>
+        </div>
+      
+      </div>
+      <div class="project-header-image">
+        <img src="Intellink.com-mockup.png" alt="Intellink landing page mockup" />
+      </div>
+      <aside class="contact-banner">
+        <p>This is a standard example of my work in designing and building conversion-driven websites. If you’d like to make something similar, reach out to me!</p>
+        <a class="contact-banner-button" href="../index.html#contact">Contact Me</a>
+      </aside>
+    </header>
+
+    <section class="demo">
+      <div class="demo-screen">
+        <video class="demo-video" autoplay muted loop playsinline preload="metadata" aria-label="AccuEngine website demo video">
+          <source src="../Insigmind/AccuEngineDemo.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </div>
+    </section>
+
+    <section class="project-intro">
+      <p>Intellink is an AI-powered procurement platform that helps connect global buyers to suppliers</p>
+      <div class="project-intro-box">
+        <p class="bg-body">The company already had a functioning website and was actively running Google Search Ads. Initial campaign performance revealed an interesting insight:</p>
+        <div class="project-intro-stats" aria-label="Performance before redesign">
+          <div class="project-intro-stat">
+            <strong>6.5%</strong>
+            <span>Click Through Rate Before Redesign</span>
+          </div>
+          <div class="project-intro-stat">
+            <strong>0.5%</strong>
+            <span>Conversion Rate Before Redesign</span>
+          </div>
+        </div>
+        <p class="bg-body">This means that people were interested enough to click the ad, which meant the acquisition strategy and search intent alignment were working. The problem existed after users landed on the website.</p>
+      </div>
+    </section>
+
+    <section class="project-intro">
+      <p>The landing page was failing to communicate value clearly enough to convert visitors into active users.</p>
+      <div class="goal-columns">
+        <div class="goal-column">
+          <h2>Goal</h2>
+          <p>Redesign the landing page to improve Upper and Mid-Funnel conversion</p>
+        </div>
+        <div class="goal-column-right">
+          <img src="Goal Visual.svg" alt="Goal visual" />
+        </div>
+      </div>
+      
+    </section>
+
+    <section class="current-website">
+      <h2 class="callout">
+        <span>Let's break apart</span>
+        <span>the current website!</span>
+      </h2>
+      <div class="website-box">
+        <div class="current-website-image-wrap">
+          <img src="current-website.png" alt="Current Intellink website" />
+        </div>
+      </div>
+      <div class="overall-issue-box">
+        <h3>Overall Issue</h3>
+        <p>The page contained lots of information, but not an engaging narrative.</p>
+        <p>Users were exposed to sections about maps, industries, statistics, and company information without understanding how those pieces connected. As a result, visitors never reached a clear answer to three critical questions:</p>
+        <ul>
+          <li>What does Intellink do?</li>
+          <li>Why is it different?</li>
+          <li>What should I do next?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="new-website">
+      <h2 class="callout">
+        <span>Here's how I put</span>
+        <span>it back together:</span>
+      </h2>
+      <div class="strategy-box">
+        <h3>My Strategy</h3>
+        <p>Instead of presenting a list of information, I focus on the buyer’s psychology. What is the visitor thinking about as they go through this journey? What do they anticipate to see next? I design this page to be a complete narrative</p>
+      </div>
+      <a class="accuengine-site-button" href="https://accuengine.ai">accuengine.ai ↗</a>
+      <div class="website-box">
+        <div class="website-image-wrap">
+          <img src="new-website.png" alt="Redesigned Intellink website" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const demoSection = document.querySelector('.demo');
+
+    if (demoSection) {
+      const updateDemoVideoPosition = () => {
+        const rect = demoSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const rawProgress = Math.min(Math.max((viewportHeight - rect.top) / viewportHeight, 0), 1);
+        const delayedProgress = Math.min(Math.max((rawProgress - 0.28) / 0.72, 0), 1);
+        const easedProgress = 1 - Math.pow(1 - delayedProgress, 3);
+        const offset = (1 - easedProgress) * viewportHeight * 1.1;
+        const scale = 1 + (1 - easedProgress) * 0.45;
+        const opacity = Math.min(delayedProgress / 0.18, 1);
+
+        demoSection.style.setProperty('--demo-video-offset', `${offset}px`);
+        demoSection.style.setProperty('--demo-video-scale', scale.toFixed(3));
+        demoSection.style.setProperty('--demo-video-opacity', opacity.toFixed(3));
+      };
+
+      updateDemoVideoPosition();
+      window.addEventListener('scroll', updateDemoVideoPosition, { passive: true });
+      window.addEventListener('resize', updateDemoVideoPosition);
+    }
+  </script>
+
+</body>
+</html>
