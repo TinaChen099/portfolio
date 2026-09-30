@@ -1122,7 +1122,7 @@ nav {
 .experience-toggle:focus-visible { outline:2px solid #fff; outline-offset:5px; }
 .experience-section.is-revealed .experience-curve { animation:experience-path-reveal 1.8s ease both; }
 .experience-section.is-revealed .experience-stop { animation:experience-arrive .7s ease both; animation-delay:calc(var(--stop-order) * 150ms); }
-@keyframes experience-path-reveal { from { clip-path:inset(0 0 100% 0); opacity:.2; } to { clip-path:inset(0 0 -10% 0); opacity:1; } }
+@keyframes experience-path-reveal { from { clip-path:inset(-10% 100% -10% -5%); opacity:.2; } to { clip-path:inset(-10% -5% -10% -5%); opacity:1; } }
 @keyframes experience-arrive { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
 @media(max-width:1000px) and (min-width:601px) {
   .experience-card { width:250px; }
