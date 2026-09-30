@@ -12,15 +12,29 @@
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="nav-logo tina-chat-wordmark" href="../index.html#top" aria-label="Tina home">tina<span>.human</span></a>
+    <a class="nav-connect" href="https://www.linkedin.com/in/tina-zhizhuang-chen/" target="_blank" rel="noopener noreferrer">connect</a>
+  </nav>
   <main id="main">
     <header class="hero wrap">
-      <div class="hero-top"><a class="back-link" href="../index.html">↖ Back to work</a><a class="site-link" href="https://accuengine.ai">accuengine.ai ↗</a></div>
-      <p class="eyebrow">ACCUENGINE / WEBSITE CASE STUDY</p>
-      <h1>Turn interest<br>into <span>intent.</span></h1>
+      <h1>Designing a <span>Search-to-Conversion Funnel</span></h1>
       <p class="hero-deck">Redesigning an AI Procurement Landing Page to Improve Conversion and Clarify Product Positioning</p>
-      <p class="body-copy">I redesigned an AI-generated website through product strategy, stakeholder research, and repeated UX testing. I also used AI-assisted coding, directing each iteration toward our business goals and the decisions buyers needed to make.</p>
-      <div class="hero-meta"><div><span class="eyebrow">MY CONTRIBUTION</span><p>Strategy → Research → UX → Development</p></div><div><span class="eyebrow">PRODUCT</span><p>AI procurement · Global buyers</p></div><div><span class="eyebrow">CURRENT BRAND</span><p>AccuEngine · accuengine.ai</p></div></div>
-      <figure class="hero-visual"><img src="Intellink.com-mockup.png" alt="AccuEngine procurement landing page project mockup" fetchpriority="high"><figcaption class="result-badge"><span aria-hidden="true">↗</span><strong>5.5%</strong><span>Increase in Conversion Rate</span></figcaption></figure>
+      <ul class="hero-pills" aria-label="Project focus areas">
+        <li>GEO / SEO Strategy</li>
+        <li>Conversion Optimization</li>
+        <li>AI Product</li>
+        <li>Full Stack Design + Dev</li>
+      </ul>
+      <figure class="hero-visual">
+        <div class="hero-device-frame">
+          <video autoplay muted loop playsinline preload="metadata" aria-label="AccuEngine website demo">
+            <source src="../Insigmind/AccuEngineDemo.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="../Insigmind/AccuEngineDemo.mp4">Watch the website demo</a>.
+          </video>
+        </div>
+        <figcaption class="result-badge"><span aria-hidden="true">↗</span><strong>5.5%</strong><span>Increase in Conversion Rate</span></figcaption>
+      </figure>
     </header>
     <nav class="chapter-nav" aria-label="Case study sections"><div class="wrap"><a href="#opportunity">01 / Opportunity</a><a href="#experience">03 / Experience</a><a href="#build">04 / Build</a><a href="#outcome">05 / Outcome</a></div></nav>
 
@@ -75,6 +89,32 @@
     window.addEventListener('resize', updateBackToTop);
     window.addEventListener('pageshow', updateBackToTop);
     updateBackToTop();
+
+    const heroVisual = document.querySelector('.hero-visual');
+    const heroFrame = document.querySelector('.hero-device-frame');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (heroVisual && heroFrame && 'IntersectionObserver' in window && typeof heroFrame.animate === 'function' && !reducedMotion.matches) {
+      let flipAnimation;
+      const revealObserver = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        revealObserver.disconnect();
+        if (reducedMotion.matches) return;
+        flipAnimation = heroFrame.animate([
+          { transform: 'translateY(64px) rotateX(48deg) scale(0.94)', opacity: 0.25 },
+          { transform: 'translateY(0) rotateX(0) scale(1)', opacity: 1 }
+        ], {
+          duration: 480,
+          easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+      revealObserver.observe(heroVisual);
+      reducedMotion.addEventListener('change', (event) => {
+        if (event.matches) {
+          revealObserver.disconnect();
+          flipAnimation?.cancel();
+        }
+      });
+    }
   </script>
 </body>
 </html>
