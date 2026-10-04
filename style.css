@@ -785,6 +785,49 @@ nav {
   object-fit: contain;
 }
 
+.about-me-section {
+  min-height: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+  padding-top: 48px;
+  padding-bottom: 72px;
+}
+
+.about-me-image {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  object-position: 38% 42%;
+  border-radius: 8px;
+}
+
+.about-me-copy {
+  max-width: 480px;
+}
+
+.about-me-eyebrow {
+  margin: 0 0 14px;
+  color: #93a5bf;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.about-me-copy .homepage-section-title {
+  margin: 0 0 18px;
+}
+
+.about-me-copy > p:last-child {
+  margin: 0;
+  color: #a3afc1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
 /* Footer */
 .contact-footer {
   padding: 88px 48px 28px;
@@ -865,6 +908,15 @@ nav {
   .homepage-section {
     padding-top: 48px;
     padding-bottom: 48px;
+  }
+
+  .about-me-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-me-image {
+    max-height: 360px;
   }
 
   .homepage-card-grid {

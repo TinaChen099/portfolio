@@ -2,6 +2,42 @@ body {
   background-color: #01010D;
 }
 
+.epic-nav {
+  background: rgba(1, 1, 13, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.epic-nav .nav-logo {
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  text-transform: none;
+}
+
+.epic-nav .nav-logo span {
+  color: #8b9cb5;
+}
+
+.epic-nav .nav-connect {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 20px;
+  border: 1px solid #a9c6fa40;
+  border-radius: 999px;
+  background: #142033;
+  color: #e6edf7;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.epic-nav .nav-connect:hover {
+  border-color: #a9c6fa80;
+  background: #243553;
+}
+
 body.epic-locked {
   overflow: hidden;
 }

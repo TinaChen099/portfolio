@@ -24,18 +24,18 @@ h3 { font-size:25px; letter-spacing:-.025em; line-height:1.3; }
 .body-copy { max-width:850px; color:var(--muted); font-size:17px; line-height:1.8; margin-bottom:20px; }
 .body-copy a { text-decoration:underline; text-underline-offset:4px; }
 .hero { padding-top:112px; text-align:center; }
-.hero h1 { max-width:1000px; margin:16px auto; font-size:clamp(36px,5vw,64px); line-height:1.08; letter-spacing:-.045em; text-wrap:balance; }
+.hero h1 { max-width:1000px; margin:16px auto 28px; font-size:clamp(36px,5vw,64px); line-height:1.18; letter-spacing:-.045em; text-wrap:balance; }
 .hero>.eyebrow { margin-bottom:12px; }
 .hero>.body-copy { max-width:800px; margin:0 auto 20px; font-size:15px; line-height:1.6; }
 .hero-top { display:flex; justify-content:center; flex-wrap:wrap; gap:24px; margin-bottom:28px; font-size:13px; }
 .site-link { color:var(--blue); }
-.hero-deck { max-width:740px; margin:0 auto 16px; font-size:clamp(18px,2vw,23px); line-height:1.4; letter-spacing:-.025em; text-wrap:balance; }
-.hero-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; list-style:none; margin:20px auto 24px; padding:0; }
-.hero-pills li { padding:8px 16px; border:1px solid var(--line); border-radius:999px; background:var(--band); color:var(--blue); font-size:12px; font-weight:500; line-height:1.5; }
+.hero-deck { max-width:740px; margin:0 auto 32px; font-size:clamp(18px,2vw,23px); line-height:1.6; letter-spacing:-.025em; text-wrap:balance; }
+.hero-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; list-style:none; margin:0 auto; padding:0; }
+.hero-pills li { padding:8px 16px; border:1px solid #50545b; border-radius:999px; background:#292c31; color:#e0e2e5; font-size:12px; font-weight:500; line-height:1.5; }
 .hero-meta { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin:24px 0; padding-top:18px; border-top:1px solid var(--line); }
 .hero-meta .eyebrow { margin-bottom:10px; font-size:10px; }
 .hero-meta p { font-size:13px; color:var(--muted); margin:0; }
-.hero-visual { width:100%; max-width:1200px; margin-inline:auto; perspective:1400px; }
+.hero-visual { width:100%; max-width:1200px; margin:clamp(40px,6vw,72px) auto 0; perspective:1400px; }
 .hero-device-frame { transform-origin:center bottom; }
 .hero-device-frame { padding:16px; border:1px solid #fff; border-radius:32px; background:#000; box-shadow:0 20px 60px #0006; }
 .hero-device-frame video { display:block; width:100%; height:auto; border-radius:17px; background:#000; }
