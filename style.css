@@ -873,8 +873,6 @@ nav {
 
 .contact-email > span:first-child { overflow-wrap: anywhere; }
 .contact-arrow { color: #d7edb6; transition: transform .2s; }
-.contact-email:hover { color: #b7cdfb; border-color: #b7cdfb; }
-.contact-email:hover .contact-arrow { transform: translate(3px, -3px); }
 .contact-footer a:focus-visible { outline: 2px solid #b7cdfb; outline-offset: 6px; }
 
 .contact-bottom {
@@ -1214,6 +1212,10 @@ nav {
   top:auto;
 }
 .experience-stop--above .experience-card { bottom:28px; }
+.experience-stop:nth-child(4) .experience-card {
+  top:calc(-28px - var(--experience-header-height, 130px));
+  bottom:auto;
+}
 .experience-stop:first-child .experience-card { left:-80px; }
 .experience-stop--below .experience-card { top:28px; }
 .experience-stop .experience-card::before { display:none; }

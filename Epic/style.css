@@ -3,9 +3,9 @@ body {
 }
 
 .epic-nav {
-  background: rgba(1, 1, 13, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .epic-nav .nav-logo {
