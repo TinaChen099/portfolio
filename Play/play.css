@@ -1,0 +1,52 @@
+:root { color-scheme: dark; --bg: #0c1016; --ink: #edf2fa; --muted: #a0adbf; --accent: #c5b6f6; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: radial-gradient(ellipse at 85% 0%, #302b4838, transparent 650px), var(--bg); color: var(--ink); font-family: 'DM Sans', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, video:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+.wrap { width: min(1200px, calc(100% - 96px)); margin-inline: auto; }
+.site-nav { display: flex; justify-content: space-between; align-items: center; padding: 28px 48px; }
+.nav-logo { padding: 10px 16px; border-radius: 12px; background: #0009; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); font-size: 24px; font-weight: 500; letter-spacing: -1px; }
+.nav-logo span { color: #8b9cb5; }
+.nav-connect { padding: 11px 20px; border: 1px solid #a9c6fa40; border-radius: 999px; background: #142033; color: #e6edf7; font-size: 13px; }
+.nav-connect:hover { background: #243553; border-color: #a9c6fa80; }
+.skip-link { position: fixed; top: -100px; left: 20px; z-index: 200; padding: 12px; background: #294363; }
+.skip-link:focus { top: 12px; }
+.play-hero { padding-block: 64px 88px; }
+.eyebrow { margin: 0 0 18px; color: var(--accent); font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; }
+h1 { margin: 0 0 28px; font-size: clamp(64px, 9vw, 120px); font-weight: 500; line-height: .98; letter-spacing: -.065em; }
+h1 em { color: var(--accent); font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; }
+.hero-description { max-width: 530px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.7; }
+.section-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.section-links a { display: inline-flex; gap: 24px; padding: 10px 16px; border: 1px solid #ffffff24; border-radius: 999px; font-size: 13px; }
+.section-links span { color: var(--accent); }
+.section-links a:hover { background: #c5b6f612; border-color: #c5b6f660; }
+.collection { padding-block: 64px; border-top: 1px solid #ffffff1a; scroll-margin-top: 24px; }
+.section-heading { margin-bottom: 32px; }
+.section-heading .eyebrow { margin-bottom: 12px; }
+h2 { margin: 0 0 16px; font-size: clamp(32px, 4vw, 48px); font-weight: 500; line-height: 1.2; letter-spacing: -.04em; }
+.section-heading > p:last-child { max-width: 620px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.media { margin: 0; min-width: 0; }
+.media img, .media video { display: block; width: 100%; height: auto; border: 1px solid #ffffff14; border-radius: 14px; background: #111823; }
+.media video { aspect-ratio: auto; object-fit: contain; border: 0; }
+figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 14px; color: var(--muted); font-size: 12px; }
+.media-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.media-placeholder { min-height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 14px; padding: 32px; border: 1px dashed #c5b6f633; border-radius: 14px; background: radial-gradient(ellipse at center, #c5b6f60c, transparent 70%), #111823; text-align: center; color: #c9c3db; }
+.placeholder-symbol { font-size: 40px; font-weight: 400; color: var(--accent); }
+.media-placeholder small { color: #8390a4; font-size: 12px; }
+footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding-block: 40px; border-top: 1px solid #ffffff1a; color: var(--muted); font-size: 13px; }
+footer p { margin: 0; }
+footer div { display: flex; flex-wrap: wrap; gap: 28px; }
+footer a:hover { color: var(--ink); }
+@media (max-width: 800px) {
+  .wrap { width: calc(100% - 40px); }
+  .site-nav { padding: 20px; }
+  .play-hero { padding-block: 48px 64px; }
+  .collection { padding-block: 48px; }
+}
+@media (max-width: 600px) {
+  .media-grid { grid-template-columns: 1fr; }
+  .media-placeholder { min-height: 240px; }
+  .hero-description { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR HUD — Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site-password.css">
+  <script src="../site-password.js"></script>
+  <link rel="stylesheet" href="ARHUD.css">
+</head>
+<body id="top">
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="nav-logo tina-chat-wordmark" href="../index.html#top" aria-label="Tina home">tina<span>.human</span></a>
+    <a class="nav-connect" href="https://www.linkedin.com/in/tina-zhizhuang-chen/" target="_blank" rel="noopener noreferrer">connect</a>
+  </nav>
+
+  <main>
+    <header>
+      <p class="eyebrow">Emerging Tech Prototype</p>
+      <h1>AR HUD</h1>
+      <p class="intro">How do we make it easier for users to transition into an era where vehicles are fully controlled by AI?</p>
+      <div class="details" aria-label="Project details">
+        <p><strong>Role</strong>Placeholder: Your role</p>
+        <p><strong>Timeline</strong>Placeholder: Project duration</p>
+        <p><strong>Focus</strong>Placeholder: Design and prototyping</p>
+      </div>
+      <figure>
+        <img src="AR-HUD-Cover.svg" alt="AR HUD interface project cover">
+      </figure>
+      <p class="preview-description">This is an HMI design challenge I completed at New York University, where my research centered around using designing for self-driving systems future vision. However, I still wanted to inform my visual decisions with user-centered methodology.</p>
+      <div class="design-question">
+        <p class="eyebrow">Design Question</p>
+        <p>How can we leverage <strong>HMI</strong> to improve the <strong>self-driving experience</strong>?</p>
+      </div>
+    </header>
+
+    <section aria-labelledby="research-title">
+      <p class="eyebrow">RESEARCH</p>
+      <h2 id="research-title">What is the self-driving experience we’re tackling?</h2>
+      <p>This design question is very vague, so I first started dissecting it. There are so many self-driving experiences out there, so what is the specific scenario we’re tackling? I started with conducting user surveys and interviews, asking “What comes to mind when I talk about self-driving cars?”</p>
+      <p>Interestingly, people often think about full-automation vehicles, the more futuristic, sometimes even scifi perception of it. I’d like to highlight the interesting findings I received. Many users report feeling reluctant about adopting self-driving features due to safety concerns.</p>
+      <div class="research-findings">
+        <article class="research-finding">
+          <img class="research-finding-image" src="User1.png" alt="" loading="lazy">
+          <h3>Reluctance to Completely Trust Automation</h3>
+          <p>Users report feeling uncertainty about self-driving vehicles, especially towards higher automation levels.</p>
+        </article>
+        <article class="research-finding">
+          <img class="research-finding-image" src="User2.png" alt="" loading="lazy">
+          <h3>Full Automation is the Ultimate Future</h3>
+          <p>Users feel they have to accept self-driving systems because it’s here to stay and increasingly becoming the trend</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="converge-title">
+      <p class="eyebrow">CONVERGE</p>
+      <h2 id="converge-title">Defining the Problem Space</h2>
+      <p>With that research, I centered this project around a more North Star area: <strong>aiming for Level 5 full automation system</strong> because that’s an area that requires the most UX support and user advocacy. Imagine we have that for the future. As a UXD, my role now is to identify how we could facilitate the transition into a fully autonomous era so that users feel safe and more trust toward the system.</p>
+      <div class="automation-levels-scroll">
+        <ol class="automation-levels" aria-label="Levels of driving automation">
+          <li><span class="automation-pill">Level 0</span><span class="automation-label">No Automation</span></li>
+          <li><span class="automation-pill">Level 1</span><span class="automation-label">Driver Assistance</span></li>
+          <li><span class="automation-pill">Level 2</span><span class="automation-label">Partial Automation</span></li>
+          <li><span class="automation-pill">Level 3</span><span class="automation-label">Conditional Automation</span></li>
+          <li><span class="automation-pill">Level 4</span><span class="automation-label">High Automation</span></li>
+          <li class="automation-level--highlight"><strong class="automation-pill">Level 5</strong><strong class="automation-label">Full Automation</strong></li>
+        </ol>
+      </div>
+      <div class="autonomous-transition">
+        <h3>How do we facilitate the transition into a fully autonomous era so that</h3>
+        <div class="transition-goals">
+          <span>users feel safer</span>
+          <span>there is more trust to the system</span>
+        </div>
+        <div class="transition-journey" aria-label="Transition from now to the North Star of full automation">
+          <div class="transition-track">
+            <div class="transition-point transition-point--now"><span class="transition-dot" aria-hidden="true"></span><span>Now</span></div>
+            <div class="transition-point transition-point--north-star"><span class="transition-dot" aria-hidden="true"></span><strong>North Star</strong><span class="transition-label">Full Automation</span></div>
+          </div>
+          <img class="future-car" src="cardrawing.png" alt="Futuristic autonomous car drawing" width="1774" height="887" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="medium-title">
+      <p class="eyebrow">RESEARCH</p>
+      <h2 id="medium-title">What HMI medium are we leveraging?</h2>
+      <p>Now, the next piece of the design question: There are so many HMI options. What is the specific medium we need? I researched into existing HMI methods, and that’s when I started looking at <strong>AR heads-up display (HUD)</strong>. I noticed that many companies currently use AR HUD in GPS or ways to alert users of road conditions.</p>
+      <div class="medium-images">
+        <img src="medium1.jpg" alt="AR heads-up display reference 1" width="397" height="223" loading="lazy">
+        <img src="medium2.jpg" alt="AR heads-up display reference 2" width="393" height="221" loading="lazy">
+        <img src="medium3.jpg" alt="AR heads-up display reference 3" width="393" height="221" loading="lazy">
+      </div>
+      <div class="hud-considerations">
+        <h3>There are many constraints of <strong>AR HUD</strong> that make is challenging to design, but also advantages that make it great for this use case.</h3>
+        <div class="hud-considerations-grid">
+          <article class="hud-consideration">
+            <h4><span class="hud-consideration-number">1</span> Be Mindful of Cognitive Overload</h4>
+            <p><strong>Constraint:</strong> It’s important to prioritize information to display so as not to cover objects on the road or distract drivers.</p>
+            <p><strong>Advantage:</strong> When the car is fully autonomous then, while we still need to be careful of cognitive overload, we do have more flexibility on what to display</p>
+          </article>
+          <article class="hud-consideration">
+            <h4><span class="hud-consideration-number">2</span> Constant Refocusing of the Eyes</h4>
+            <p><strong>Constraint:</strong> The Optical viewing path of the HUD is different than the road, so drivers need to refocus their eyes when looking across the HUD and the road.</p>
+            <p><strong>Advantage:</strong> This could be a potential problem for a human driver, but less a problem for a self-driving car passenger.</p>
+          </article>
+          <article class="hud-consideration">
+            <h4><span class="hud-consideration-number">3</span> Accessibility: Color isn’t the Only Indicator</h4>
+            <p>Many existing AR HUD uses colors to identify crucial information, but there should be a secondary explanation that accompanies it.</p>
+          </article>
+        </div>
+      </div>
+      <div class="design-question">
+        <p class="eyebrow">Defining the Scope</p>
+        <p>How can we use AR HUD to inform passengers of autonomous vehicle’s system status and intent so that users feel safer in the vehicle?</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="develop-title">
+      <p class="eyebrow">DEVELOP</p>
+      <h2 id="develop-title">My Design Decisions</h2>
+      <figure>
+        <img src="DesignDecision.png" alt="AR HUD design decisions" width="1974" height="1361" loading="lazy">
+      </figure>
+    </section>
+
+    <section aria-labelledby="reflection-title">
+      <p class="eyebrow">05 · Reflection</p>
+      <h2 id="reflection-title">What I learned</h2>
+      <p>Placeholder: Summarize what you learned from building and testing the prototype, what worked well, and what you would explore next.</p>
+    </section>
+  </main>
+
+  <footer><a href="../index.html#success-cases">Back to all projects</a></footer>
+</body>
+</html>

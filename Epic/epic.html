@@ -9,20 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&family=Lato:ital,wght@1,300&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../case-study.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../site-password.css">
+  <script src="../site-password.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../case-study-footer.css">
 </head>
-<body class="epic-locked">
+<body id="top">
 
-  <div class="epic-password-gate" role="dialog" aria-modal="true" aria-labelledby="epic-password-title">
-    <form class="epic-password-gate__card" id="epic-password-form">
-      <p class="epic-password-gate__eyebrow">Protected case study</p>
-      <h2 class="epic-password-gate__title" id="epic-password-title">Enter password</h2>
-      <p class="epic-password-gate__copy">This work is protected by NDA. Please enter the password to continue.</p>
-      <label class="epic-password-gate__label" for="epic-password-input">Password</label>
-      <input class="epic-password-gate__input" id="epic-password-input" name="password" type="password" autocomplete="current-password" required>
-      <p class="epic-password-gate__error" id="epic-password-error" aria-live="polite"></p>
-      <button class="epic-password-gate__button" type="submit">View case study</button>
-    </form>
-  </div>
+
 
   <nav class="epic-nav" aria-label="Main navigation">
     <a class="nav-logo tina-chat-wordmark" href="../index.html#top" aria-label="Tina home">tina<span>.human</span></a>
@@ -157,50 +151,69 @@
       </figcaption>
     </figure>
     </section>
-    
-    
+    <section class="epic-section epic-framework" aria-labelledby="epic-framework-title">
+      <p class="epic-label">FINAL DEMO</p>
+      <h2 class="epic-header" id="epic-framework-title">
+        <span>A Scalable AI UX Framework</span>
+        <span>for Healthcare Workflows</span>
+      </h2>
+      <p class="epic-body">Established a scalable UX foundation for AI agent integration in healthcare authorization systems, balancing efficiency gains with regulatory constraints and user trust requirements, enabling future AI expansion across Epic products.</p>
+      <figure class="case-study-placeholder epic-video-visual">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Epic AI healthcare workflow final demo">
+          <source src="Epic-Final-Demo.mp4" type="video/mp4">
+          Your browser does not support embedded video.
+        </video>
+      </figure>
+    </section>
 
+    <section class="epic-section epic-outcomes" aria-labelledby="epic-outcomes-title">
+      <p class="epic-label">Outcomes</p>
+      <h2 class="epic-header" id="epic-outcomes-title">
+        <span>Early feedback and a plan</span>
+        <span>to measure long-term impact</span>
+      </h2>
+      <p class="epic-body">This is a north star project with a development timeline of at least three years, so opportunities for hands-on user testing are still limited. Our feedback so far comes primarily from qualitative research through interviews. Twice a year, we hold major user group meetings to showcase projects planned for upcoming releases, where we have received positive feedback from major insurance companies.</p>
+      <div class="epic-test-plans">
+        <h3 class="epic-h3">Test Plans</h3>
+        <p class="epic-body">We have already developed a testing plan to evaluate the AI agent across three dimensions as development and adoption progress:</p>
+        <div class="epic-outcomes__dimensions">
+        <div class="epic-outcome-card">
+          <div class="epic-outcome-card__top"><span class="epic-outcome-card__number">01</span><span class="epic-outcome-card__method">Behavioral observation</span></div>
+          <h4 class="epic-h3">Confidence Level</h4>
+          <p class="epic-body">Observe how often users manually verify the data retrieved by the AI agent to understand their confidence in its results.</p>
+          <p class="epic-outcome-card__measure">Measure: frequency of manual verification</p>
+        </div>
+        <div class="epic-outcome-card">
+          <div class="epic-outcome-card__top"><span class="epic-outcome-card__number">02</span><span class="epic-outcome-card__method">A/B testing</span></div>
+          <h4 class="epic-h3">Data Accuracy</h4>
+          <p class="epic-body">Run A/B tests with and without the AI agent to compare whether users retrieve the same clinical data and assess the accuracy of AI-assisted retrieval.</p>
+          <p class="epic-outcome-card__measure">Compare: retrieval with and without AI</p>
+        </div>
+        <div class="epic-outcome-card">
+          <div class="epic-outcome-card__top"><span class="epic-outcome-card__number">03</span><span class="epic-outcome-card__method">Longitudinal tracking</span></div>
+          <h4 class="epic-h3">Long-Term Trend</h4>
+          <p class="epic-body">Track changes throughout adoption to evaluate whether AI automation saves time and enables higher accuracy over time.</p>
+          <p class="epic-outcome-card__measure">Track: time saved and accuracy over adoption</p>
+        </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <footer class="contact-footer" id="contact" aria-labelledby="contact-title">
+    <p class="contact-eyebrow">GOOD THINGS START WITH A HELLO</p>
+    <h2 id="contact-title">Let’s build something <em>good.</em></h2>
+    <div class="contact-email">
+      <span>zhizhuangchen99@gmail.com</span>
+    </div>
+    <div class="contact-bottom">
+      <a class="contact-home-button" href="../index.html">← Back to home</a>
+      <p>© 2026 Tina Chen</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
   <script>
-    const passwordGate = document.querySelector('.epic-password-gate');
-    const passwordForm = document.querySelector('#epic-password-form');
-    const passwordInput = document.querySelector('#epic-password-input');
-    const passwordError = document.querySelector('#epic-password-error');
-    const accessKey = 'epic-case-study-access';
-
-    const unlockEpicPage = () => {
-      document.body.classList.remove('epic-locked');
-      passwordGate.setAttribute('aria-hidden', 'true');
-    };
-
-    if (sessionStorage.getItem(accessKey) === 'granted') {
-      unlockEpicPage();
-    } else {
-      window.requestAnimationFrame(() => passwordInput.focus());
-    }
-
-    passwordForm.addEventListener('submit', event => {
-      event.preventDefault();
-
-      if (passwordInput.value === '1979') {
-        sessionStorage.setItem(accessKey, 'granted');
-        passwordError.textContent = '';
-        unlockEpicPage();
-        return;
-      }
-
-      passwordError.textContent = 'Incorrect password. Please try again.';
-      passwordInput.value = '';
-      passwordInput.setAttribute('aria-invalid', 'true');
-      passwordInput.focus();
-    });
-
-    passwordInput.addEventListener('input', () => {
-      passwordInput.removeAttribute('aria-invalid');
-      passwordError.textContent = '';
-    });
-
     const layerStack = document.querySelector('.epic-layer-stack');
     const layerStackImages = document.querySelectorAll('.epic-layer-stack__image');
     const assembly = document.querySelector('.epic-component-assembly');
