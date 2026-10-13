@@ -30,12 +30,12 @@
         <div class="tina-chat-prompts" aria-label="Start a conversation">
           <a href="#help-companies">What can you do?</a>
           <a href="#success-cases">Show me your work</a>
-          <button type="button">Where have you been?</button>
-          <button type="button">I'd like to get in touch!</button>
+          <a href="#experience">Where have you been?</a>
+          <a href="#contact">I'd like to get in touch!</a>
         </div>
         <form class="tina-chat-composer">
           <p class="tina-chat-placeholder">Hi Tina, how can I work with you?</p>
-          <div class="tina-chat-composer-bottom"><button class="hero-intro-btn hero-intro-btn--primary tina-chat-go" type="submit" aria-label="Send message">Go</button></div>
+          <div class="tina-chat-composer-bottom"><button class="hero-intro-btn hero-intro-btn--primary tina-chat-go" type="submit" aria-label="Go to contact">Go</button></div>
         </form>
         <p class="tina-chat-footnote">A playful introduction. The designer behind it is real.</p>
       </div>
@@ -338,9 +338,14 @@
     </div>
     <div class="contact-bottom">
       <p>© 2026 Tina Chen</p>
-      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
     </div>
   </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </a>
 
   <div class="case-transition" aria-hidden="true">
     <div class="case-transition-preview">
@@ -489,12 +494,12 @@
       }
     });
 
-    // The composer opens an email draft; prompt links navigate directly.
+    // The composer and contact prompt navigate to the footer.
     (() => {
       const form = document.querySelector('.tina-chat-composer');
       form.addEventListener('submit', event => {
         event.preventDefault();
-        window.location.href = 'mailto:hello@studio.com?subject=Let%E2%80%99s%20build%20something&body=' + encodeURIComponent('Hi Tina, how can I work with you?');
+        window.location.hash = 'contact';
       });
     })();
 
