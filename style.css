@@ -1031,7 +1031,7 @@ nav {
   }
 }
 
-/* Media sets the card height; copy adapts without resizing the action button. */
+/* Keep desktop cards in two columns while media loads; copy sets a minimum height. */
 .success-case-columns:has(.success-case-preview) {
   align-items: stretch;
 }
@@ -1039,7 +1039,7 @@ nav {
   min-height: 0;
 }
 .success-case-columns:has(.success-case-preview) .success-case-column--image {
-  contain: size;
+  contain: none;
   padding: clamp(18px, 2.2vw, 32px);
   gap: 16px;
 }
@@ -1086,12 +1086,6 @@ nav {
 }
 .success-case-preview .ar-hud-preview-button {
   height: auto;
-}
-.success-case-columns.is-media-stacked {
-  grid-template-columns: 1fr;
-}
-.success-case-columns.is-media-stacked .success-case-column--image {
-  contain: none;
 }
 @media (max-width: 768px) {
   .success-case-columns:has(.success-case-preview) .success-case-column--image {

@@ -362,45 +362,6 @@
   </div>
 
   <script>
-    // Preserve the media's natural ratio and stack only when the copy cannot fit.
-    const mediaCards = [...document.querySelectorAll('.success-case-columns')]
-      .filter(card => card.querySelector('.success-case-preview video, .success-case-preview img'));
-    let cardLayoutFrame;
-    const fitMediaCards = () => {
-      cancelAnimationFrame(cardLayoutFrame);
-      cardLayoutFrame = requestAnimationFrame(() => {
-        mediaCards.forEach(card => {
-          card.classList.remove('is-media-stacked');
-          if (window.innerWidth <= 768) return;
-          const copy = card.querySelector('.success-case-column--image');
-          const media = card.querySelector('video, img');
-          const ready = media.tagName === 'VIDEO' ? media.videoWidth : media.naturalWidth;
-          if (!ready || copy.scrollHeight > copy.clientHeight + 1) {
-            card.classList.add('is-media-stacked');
-          }
-        });
-      });
-    };
-    mediaCards.forEach(card => {
-      const media = card.querySelector('.success-case-preview video, .success-case-preview img');
-      media.addEventListener('loadedmetadata', fitMediaCards);
-      media.addEventListener('load', fitMediaCards);
-    });
-    // Only width changes trigger another fit, avoiding height-observer loops.
-    const cardWidths = new WeakMap();
-    const cardWidthObserver = new ResizeObserver(entries => {
-      if (entries.some(entry => {
-        const width = entry.contentRect.width;
-        if (cardWidths.get(entry.target) === width) return false;
-        cardWidths.set(entry.target, width);
-        return true;
-      })) fitMediaCards();
-    });
-    mediaCards.forEach(card => cardWidthObserver.observe(card));
-    window.addEventListener('resize', fitMediaCards);
-    document.fonts.ready.then(fitMediaCards);
-    fitMediaCards();
-
     const successCaseObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         entry.target.classList.toggle('is-visible', entry.isIntersecting);
