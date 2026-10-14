@@ -321,19 +321,17 @@
     };
 
     const setAssemblyProgress = progress => {
-      const heldProgress = clamp((progress - 0.84) / 0.16, 0, 1);
-      const easedProgress = heldProgress;
       const scatterScale = window.innerWidth <= 768 ? 0.55 : 1;
-      const baseOpacity = heldProgress;
-      const labelOpacity = 1 - heldProgress;
+      const baseOpacity = progress;
+      const labelOpacity = 1 - progress;
 
       assemblyBase.style.opacity = baseOpacity.toFixed(3);
 
       assemblyLayers.forEach(layer => {
         const startX = Number(layer.dataset.startX) * scatterScale;
         const startY = Number(layer.dataset.startY) * scatterScale;
-        const currentX = startX * (1 - easedProgress);
-        const currentY = startY * (1 - easedProgress);
+        const currentX = startX * (1 - progress);
+        const currentY = startY * (1 - progress);
 
         layer.style.transform = `translate3d(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px, 0)`;
       });
@@ -365,8 +363,8 @@
 
       if (assembly) {
         const rect = assembly.getBoundingClientRect();
-        const start = viewportHeight * 0.72;
-        const end = rect.height - (viewportHeight * 0.28) + 80;
+        const start = viewportHeight * 0.85;
+        const end = viewportHeight * 0.7;
         const progress = clamp((start - rect.top) / end, 0, 1);
 
         setAssemblyProgress(progress);
