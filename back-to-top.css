@@ -1,0 +1,25 @@
+.back-to-top {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #a9c6fa55;
+  border-radius: 50%;
+  background: #142033;
+  color: #e6edf7;
+  box-shadow: 0 6px 24px #0005;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.back-to-top[hidden] { display: none; }
+.back-to-top svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.back-to-top:hover { background: #243553; transform: translateY(-3px); }
+.back-to-top:focus-visible { outline: 2px solid #b7cdfb; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .back-to-top { transition: none; }
+}

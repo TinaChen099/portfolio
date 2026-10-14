@@ -98,8 +98,8 @@ figcaption { color:var(--muted); font-size:12px; line-height:1.7; padding-top:16
 .button { display:inline-block; margin-top:12px; padding:16px 24px; color:var(--paper); background:var(--band); border-radius:6px; font-size:14px; font-weight:600; }
 .button:hover { color:var(--paper); background:#152136; }
 footer { display:flex; justify-content:space-between; gap:20px; padding-block:32px; border-top:1px solid var(--line); font-size:12px; color:var(--muted); }
-.back-to-top { position:fixed; right:24px; bottom:24px; z-index:20; display:grid; place-items:center; width:48px; height:48px; border-radius:50%; background:var(--band); color:var(--paper); box-shadow:0 6px 24px #0004; font-size:26px; }
-.back-to-top:hover { color:var(--paper); background:#152136; }
+.back-to-top { position:fixed; right:24px; bottom:24px; z-index:20; display:grid; place-items:center; width:48px; height:48px; border-radius:50%; background:var(--blue); color:var(--paper); box-shadow:0 6px 24px #0004; font-size:26px; }
+.back-to-top:hover { color:var(--paper); background:#b7cdfb; }
 .back-to-top[hidden] { display:none; }
 .skip-link { position:fixed; top:-100px; left:20px; padding:12px; background:var(--band); color:var(--paper); z-index:30; }
 .skip-link:focus { top:12px; }

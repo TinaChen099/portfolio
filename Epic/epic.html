@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../case-study-footer.css">
+  <link rel="stylesheet" href="../back-to-top.css">
 </head>
 <body id="top">
 
@@ -28,6 +29,11 @@
         <span class="epic-hero__title-accent">Healthcare</span>
       </h1>
       <p class="epic-hero__subtitle">Driving Adoption in One of the Most High-Stakes Industries</p>
+      <dl class="epic-hero__details">
+        <div><dt>Role</dt><dd>Product Designer</dd></div>
+        <div><dt>Timeline</dt><dd>September 2024 - January 2026</dd></div>
+        <div><dt>Focus</dt><dd>Research, Design and prototyping</dd></div>
+      </dl>
       <div class="epic-hero__visual">
         <img src="EpicCover.jpg" alt="Epic AI healthcare agent interface">
       </div>
@@ -285,7 +291,7 @@
     <div class="contact-bottom">
       <a class="contact-home-button" href="../index.html">← Back to home</a>
       <p>© 2026 Tina Chen</p>
-      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+
     </div>
   </footer>
 
@@ -384,5 +390,9 @@
     updateScrollAnimations();
   </script>
 
+  <a class="back-to-top" href="#top" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
+  <script src="../back-to-top.js" defer></script>
 </body>
 </html>

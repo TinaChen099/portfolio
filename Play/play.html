@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="play.css">
+  <link rel="stylesheet" href="../case-study-footer.css">
+  <link rel="stylesheet" href="../back-to-top.css">
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -23,14 +25,14 @@
       <h1>A little room<br>to <em>play.</em></h1>
       <p class="hero-description">Interfaces, imagined worlds, and experiments with new technology. A collection of the things I make to explore what’s possible.</p>
       <div class="section-links" aria-label="Explore the collection">
-        <a href="#game-ui">Game UI <span>↗</span></a>
-        <a href="#vr">VR Development <span>↗</span></a>
-        <a href="#concept-art">Concept Art <span>↗</span></a>
+        <a href="#game-ui">Game UI</a>
+        <a href="#vr">VR Development</a>
+        <a href="#concept-art">Concept Art</a>
       </div>
     </header>
 
     <section id="game-ui" class="collection">
-      <div class="section-heading"><p class="eyebrow">01 / Interfaces</p><h2>Game UI</h2><p>Exploring visual language, atmosphere, and the small details that make a game interface feel part of its world.</p></div>
+      <div class="section-heading"><p class="eyebrow">01</p><h2>Game UI</h2><p>Exploring visual language, atmosphere, and the small details that make a game interface feel part of its world.</p></div>
       <div class="media-grid">
         <figure class="media"><img src="GameUI1.jpg" alt="Game interface visual design study 1" loading="lazy"></figure>
         <figure class="media"><img src="GameUI2.jpg" alt="Game interface visual design study 2" loading="lazy"></figure>
@@ -40,7 +42,7 @@
     </section>
 
     <section id="vr" class="collection">
-      <div class="section-heading"><p class="eyebrow">02 / Immersive experiences</p><h2>VR Development</h2><p>A space for experiments in presence, interaction, and building experiences beyond the screen.</p></div>
+      <div class="section-heading"><p class="eyebrow">02</p><h2>VR Development</h2><p>A space for experiments in presence, interaction, and building experiences beyond the screen.</p></div>
       <div class="media-grid">
         <figure class="media"><video autoplay muted loop playsinline preload="metadata" aria-label="Dentixbuddy video study one"><source src="Dentixbuddy1.mp4" type="video/mp4">Your browser does not support embedded video. <a href="Dentixbuddy1.mp4">Watch the video</a>.</video><figcaption>Dentixbuddy / 01</figcaption></figure>
         <figure class="media"><video autoplay muted loop playsinline preload="metadata" aria-label="Dentixbuddy video study two"><source src="Dentixbuddy2.mp4" type="video/mp4">Your browser does not support embedded video. <a href="Dentixbuddy2.mp4">Watch the video</a>.</video><figcaption>Dentixbuddy / 02</figcaption></figure>
@@ -48,12 +50,26 @@
     </section>
 
     <section id="concept-art" class="collection">
-      <div class="section-heading"><p class="eyebrow">03 / World building</p><h2>Game Concept Art</h2><p>Ideas for objects, environments, and imagined worlds, brought to life through shape, material, and mood.</p></div>
+      <div class="section-heading"><p class="eyebrow">03</p><h2>Game Concept Art</h2><p>Ideas for objects, environments, and imagined worlds, brought to life through shape, material, and mood.</p></div>
       <figure class="media"><img src="PropDesign1.jpg" alt="Prop design concept artwork" loading="lazy"><figcaption><span>Prop design study</span><span>Concept / Visual exploration</span></figcaption></figure>
     </section>
 
   </main>
 
-  <footer class="wrap"><p>Always curious. Always making.</p><div><a href="../index.html#success-cases">Back to work ↗</a><a href="#top">Back to top ↑</a></div></footer>
+  <footer class="contact-footer" id="contact" aria-labelledby="contact-title">
+    <p class="contact-eyebrow">GOOD THINGS START WITH A HELLO</p>
+    <h2 id="contact-title">Let’s build something <em>good.</em></h2>
+    <div class="contact-email">
+      <span>zhizhuangchen99@gmail.com</span>
+    </div>
+    <div class="contact-bottom">
+      <a class="contact-home-button" href="../index.html">← Back to home</a>
+      <p>© 2026 Tina Chen</p>
+    </div>
+  </footer>
+  <a class="back-to-top" href="#top" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
+  <script src="../back-to-top.js" defer></script>
 </body>
 </html>

@@ -158,6 +158,25 @@ body {
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.56), 0 0 30px rgba(225, 209, 255, 0.38);
 }
 
+.epic-hero__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 48px;
+  margin-top: 32px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.epic-hero__details dt {
+  margin-bottom: 4px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.epic-hero__details dd {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+}
+
 .epic-background {
   margin: 0 auto 90px;
 }
