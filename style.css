@@ -1060,6 +1060,9 @@ nav {
 .case-logo--accuengine {
   width: 120px;
 }
+.case-logo--insigmind {
+  width: 100px;
+}
 .success-case-columns:has(.success-case-preview) .case-logo + .case-title {
   margin-top: 0;
 }
