@@ -1,0 +1,28 @@
+.contact-email { flex-wrap: wrap; }
+.contact-email .copy-email-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border: 0;
+  background: transparent;
+  color: #e6edf7;
+  font: 500 12px 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+.copy-email-button svg { width: 20px; height: 20px; }
+.contact-email .copy-email-button:hover { color: #b7cdfb; }
+.copy-email-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.copy-email-button:focus-visible { outline: 2px solid #b7cdfb; outline-offset: 4px; }
