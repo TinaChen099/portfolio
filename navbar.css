@@ -1,0 +1,44 @@
+/* Shared compact navigation across the portfolio. */
+nav.scroll-navbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 12px 48px;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transition: background-color 220ms ease, border-color 220ms ease;
+}
+
+nav.scroll-navbar .nav-logo {
+  padding: 0;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+nav.scroll-navbar.is-scrolled {
+  background: rgba(8, 8, 8, 0.72);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+nav.scroll-navbar.is-scrolled .nav-logo { color: #f0f0f0; }
+nav.scroll-navbar.is-scrolled .nav-logo span { color: #8b9cb5; }
+
+/* Play's navigation previously occupied space above its hero. */
+.scroll-navbar + main#main .play-hero { padding-top: 132px; }
+
+@media (max-width: 768px) {
+  nav.scroll-navbar { padding: 10px 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav.scroll-navbar { transition: none; }
+}

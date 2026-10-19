@@ -10,10 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="copy-email.css">
+  <link rel="stylesheet" href="navbar.css">
+  <script src="navbar.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body id="top">
 
-  <nav>
+  <nav class="homepage-nav scroll-navbar">
     <a class="nav-logo tina-chat-wordmark" href="#top" aria-label="Tina home">tina<span>.human</span></a>
     <a class="nav-connect" href="https://www.linkedin.com/in/tina-zhizhuang-chen/" target="_blank" rel="noopener noreferrer">connect</a>
   </nav>
@@ -105,7 +108,7 @@
     <h2 class="homepage-section-title">Case Studies</h2>
     <div class="success-case-box">
       <div class="success-case-banner">
-        <p class="success-case-banner-text">" I need help building an agentic AI experience "</p>
+        <p class="success-case-banner-text">"Hi Tina, I need help building an agentic AI experience "</p>
         <div class="success-case-gradient"></div>
       </div>
       <div class="success-case-columns">
@@ -170,7 +173,7 @@
     </div>
     <div class="success-case-box">
       <div class="success-case-banner">
-        <p class="success-case-banner-text">"Hi Tina, I’d like to create a landing page that grows conversion"</p>
+        <p class="success-case-banner-text">"I’d like to create a landing page that grows conversion"</p>
         <div class="success-case-gradient"></div>
       </div>
       <div class="success-case-columns">
@@ -384,33 +387,79 @@
     const caseTransitionFrame = document.querySelector('.case-transition-frame');
     const caseTransitionPreview = document.querySelector('.case-transition-preview');
     let caseTransitionActive = false;
+    let previewUrl = '';
+    let transitionTimer;
+    let activeCaseButton;
+    const reducedCaseMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const prepareCasePreview = (button) => {
+      if (caseTransitionActive || navigator.connection?.saveData) return;
+      const url = button.href;
+      if (previewUrl === url) return;
+      previewUrl = url;
+      caseTransitionFrame.src = url;
+    };
+
+    // Only wait for the opening view, not every image and video down the page.
+    const casePreviewReady = () => {
+      try {
+        const doc = caseTransitionFrame.contentDocument;
+        if (!doc || doc.URL !== previewUrl || doc.readyState === 'loading' || !doc.body) return false;
+        if ([...doc.querySelectorAll('link[rel="stylesheet"]')].some(link => !link.sheet)) return false;
+        return [...doc.images].every(img => {
+          const bounds = img.getBoundingClientRect();
+          const visible = bounds.width && bounds.height && bounds.bottom > 0 && bounds.top < caseTransitionFrame.clientHeight;
+          return !visible || (img.complete && img.naturalWidth > 0);
+        });
+      } catch {
+        return false;
+      }
+    };
 
     document.querySelectorAll('.case-button[href]:not([href="#"]):not(.ar-hud-video-trigger)').forEach((button) => {
+      ['pointerenter', 'focus', 'pointerdown'].forEach(type => {
+        button.addEventListener(type, () => prepareCasePreview(button));
+      });
       button.addEventListener('click', (event) => {
-        const targetUrl = button.getAttribute('href');
-
-        if (!targetUrl || caseTransitionActive) {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || button.target === '_blank') return;
+        if (caseTransitionActive) {
+          event.preventDefault();
           return;
         }
+        // Native navigation is quickest when animation is disabled or data is limited.
+        if (reducedCaseMotion.matches || navigator.connection?.saveData) return;
 
         event.preventDefault();
+        prepareCasePreview(button);
         caseTransitionActive = true;
-        caseTransitionFrame.src = targetUrl;
-        caseTransition.classList.add('is-active');
-        document.body.classList.add('case-transition-lock');
-
-        window.setTimeout(() => {
-          caseTransition.classList.add('is-expanded');
-        }, 1000);
-
-        window.setTimeout(() => {
-          window.location.href = targetUrl;
-        }, 1600);
+        activeCaseButton = button;
+        button.setAttribute('aria-busy', 'true');
+        const started = performance.now();
+        const navigate = () => window.location.assign(button.href);
+        const showWhenReady = () => {
+          if (!casePreviewReady()) {
+            // Slow or failed previews fall back to normal navigation without a blank overlay.
+            if (performance.now() - started >= 1200) return navigate();
+            transitionTimer = window.setTimeout(showWhenReady, 50);
+            return;
+          }
+          caseTransition.classList.add('is-active');
+          document.body.classList.add('case-transition-lock');
+          transitionTimer = window.setTimeout(() => {
+            caseTransition.classList.add('is-expanded');
+            transitionTimer = window.setTimeout(navigate, 600);
+          }, 1000);
+        };
+        showWhenReady();
       });
     });
 
     window.addEventListener('pageshow', () => {
+      window.clearTimeout(transitionTimer);
+      activeCaseButton?.removeAttribute('aria-busy');
+      activeCaseButton = null;
       caseTransitionActive = false;
+      previewUrl = '';
       caseTransition.classList.remove('is-active', 'is-expanded');
       document.body.classList.remove('case-transition-lock');
       caseTransitionFrame.removeAttribute('src');
